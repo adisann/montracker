@@ -1,8 +1,7 @@
-
-import Link from 'next/link'
+import Link from 'next/link';
 import { API_URL } from '@/app/constants/api-url';
 import { CalendarDays, ArrowUpCircle, ArrowDownCircle, Edit, Trash2, PlusCircle } from 'lucide-react';
-import {TransactionDelete} from "@/app/_components/transaction-delete";
+import { TransactionDelete } from '@/app/_components/transaction-delete';
 
 export const TransactionRead = async () => {
   const res = await fetch(API_URL);
@@ -14,13 +13,11 @@ export const TransactionRead = async () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6">
-      
       <section className="mb-6">
         <h3 className="text-xl sm:text-2xl font-semibold text-gray-800">Your Transactions</h3>
         <p className="text-sm sm:text-base text-gray-500 mt-1">Overview of your financial activities</p>
       </section>
 
-      
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className="bg-white rounded-lg shadow-sm p-4">
           <h4 className="text-sm text-gray-500 font-medium">Total Income</h4>
@@ -36,7 +33,6 @@ export const TransactionRead = async () => {
         </div>
       </div>
 
-      
       <div className="flex justify-end mb-4">
         <Link href="/create" className="inline-flex items-center px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors">
           <PlusCircle className="w-4 h-4 mr-2" />
@@ -44,7 +40,6 @@ export const TransactionRead = async () => {
         </Link>
       </div>
 
-      
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
@@ -66,7 +61,7 @@ export const TransactionRead = async () => {
                   </td>
                   <td className="px-4 sm:px-6 py-3">
                     <div className={`text-sm font-semibold ${item.isexpense ? 'text-red-600' : 'text-green-600'}`}>
-                      {item.isexpense ? '-' : '+'}${item.amount}
+                      {item.isexpense ? '-' : '+'}Rp.{item.amount}
                     </div>
                   </td>
                   <td className="hidden sm:table-cell px-4 sm:px-6 py-3">
@@ -89,7 +84,7 @@ export const TransactionRead = async () => {
                       <Link href={`edit/${item._id}`} className="p-1 text-yellow-600 hover:text-yellow-900">
                         <Edit className="w-4 h-4" />
                       </Link>
-                      <TransactionDelete transaction_id={`${item._id}`}/>
+                      <TransactionDelete transaction_id={`${item._id}`} />
                     </div>
                   </td>
                 </tr>
