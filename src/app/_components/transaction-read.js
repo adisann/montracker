@@ -21,15 +21,15 @@ export const TransactionRead = async () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className="bg-white rounded-lg shadow-sm p-4">
           <h4 className="text-sm text-gray-500 font-medium">Total Income</h4>
-          <p className="text-lg sm:text-xl font-bold text-green-600">${totalIncome.toFixed(2)}</p>
+          <p className="text-lg sm:text-xl font-bold text-green-600">Rp.{totalIncome.toFixed(2)}</p>
         </div>
         <div className="bg-white rounded-lg shadow-sm p-4">
           <h4 className="text-sm text-gray-500 font-medium">Total Expense</h4>
-          <p className="text-lg sm:text-xl font-bold text-red-600">${totalExpense.toFixed(2)}</p>
+          <p className="text-lg sm:text-xl font-bold text-red-600">Rp.{totalExpense.toFixed(2)}</p>
         </div>
         <div className="bg-white rounded-lg shadow-sm p-4">
           <h4 className="text-sm text-gray-500 font-medium">Balance</h4>
-          <p className="text-lg sm:text-xl font-bold text-blue-600">${totalBalance.toFixed(2)}</p>
+          <p className="text-lg sm:text-xl font-bold text-blue-600">Rp.{totalBalance.toFixed(2)}</p>
         </div>
       </div>
 
